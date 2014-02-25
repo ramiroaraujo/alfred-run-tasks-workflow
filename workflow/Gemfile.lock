@@ -15,6 +15,7 @@ GEM
     moneta (0.7.20)
     nori (2.3.0)
     plist (3.1.0)
+    rake (0.9.6)
     terminal-notifier (1.5.1)
 
 PLATFORMS
@@ -23,3 +24,4 @@ PLATFORMS
 DEPENDENCIES
   alfred-workflow
   plist
+  rake

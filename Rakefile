@@ -12,11 +12,6 @@ $config['bundleid'] = "#{$config['domain']}.#{$config['id']}"
 $config['plist'] = File.join($config['path'], 'info.plist')
 $config['workflow_dbx'] = File.join(File.expand_path($config['dropbox']), '/Alfred.alfredpreferences/workflows')
 
-# import sub-rakefiles
-FileList['*/Rakefile'].each { |file|
-  import file
-}
-
 desc 'Update config'
 task :config do
   modified = false
