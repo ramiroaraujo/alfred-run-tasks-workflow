@@ -1,3 +1,3 @@
-# Run Task for Alfred App
+# Run Tasks for Alfred App
 
 @todo write comments :)
