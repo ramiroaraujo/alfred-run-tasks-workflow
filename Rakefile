@@ -111,6 +111,9 @@ task :export => [:config] do
   FileUtils.rmtree output if File.exists? output
 
   FileUtils.cp_r $config['path'], output
+  FileUtils.rm "#{output}/Rakefile"
+  FileUtils.cp 'Rakefile_template', "#{output}/Rakefile"
+
   chdir output
 
   # clean up workflow files for export

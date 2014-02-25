@@ -1,0 +1,6 @@
+require 'rubygems' unless defined? Gem # rubygems is only needed in 1.8
+
+require 'yaml'
+require 'plist'
+
+Rake::TaskManager.record_task_metadata = true
