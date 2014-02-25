@@ -10,10 +10,16 @@ desc 'something for you
 yeah baby this description is for you baby'
 task :something do |task|
   File.open('log.txt', 'w') { |file| file.write('your text') }
+  puts 'done with something'
 end
 
 desc 'another thing
 but quite large actually'
 task :another_thing do |task|
   File.open('another.txt', 'w') { |file| file.write('your text') }
+  puts 'done with another thing'
+end
+
+if $0 == __FILE__
+  Rake.application['populate'].invoke() #all tasks
 end

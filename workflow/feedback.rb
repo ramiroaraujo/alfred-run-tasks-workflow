@@ -16,7 +16,7 @@ Alfred.with_friendly_error do |alfred|
     fb.add_item({
         :uid => task.name,
         :title => "run: #{task.comment}",
-        :subtitle => task.comments[0],
+        :subtitle => task.full_comment.split("\n").join('. '),
         :arg => task.name,
         :valid => 'yes',
     })
