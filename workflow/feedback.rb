@@ -12,14 +12,24 @@ Alfred.with_friendly_error do |alfred|
   Rake.load_rakefile 'Rakefile'
   tasks = Rake.application.tasks
 
-  tasks.each do |task|
+  if tasks.length > 0
+    tasks.each do |task|
+      fb.add_item({
+          :uid => task.name,
+          :title => "run: #{task.comment}",
+          :subtitle => task.full_comment.split("\n").join('. '),
+          :arg => task.name,
+          :valid => 'yes',
+      })
+    end
+  else
     fb.add_item({
-        :uid => task.name,
-        :title => "run: #{task.comment}",
-        :subtitle => task.full_comment.split("\n").join('. '),
-        :arg => task.name,
-        :valid => 'yes',
+        :uid => '',
+        :title => 'No Tasks to run',
+        :subtitle => 'No Tasks were found in the Rakefile',
+        :valid => 'no',
     })
+
   end
 
   puts fb.to_xml()
